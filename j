@@ -10,7 +10,6 @@ let winCombos = [
     [cells[2], cells[4], cells[6]],
     [cells[0], cells[4], cells[8]],
 ]
-let cellCounter = 0
 let topBoxes = document.querySelectorAll('.top');
 let bottomBoxes = document.querySelectorAll('.bottom')
 let leftBoxes = document.querySelectorAll('.left')
@@ -22,6 +21,7 @@ let boxes = [topBoxes, bottomBoxes, rightBoxes, leftBoxes, centerBox]
 
 for (i = 0; i < cells.length; i++) {
     cells[i].addEventListener('click', userClick);
+
 }
 
 function userClick(e) {
@@ -36,7 +36,7 @@ function userClick(e) {
 
     }
 };
-
+let cellCounter = 0
 
 function checkWin() {
     cellCounter++
@@ -47,47 +47,31 @@ function checkWin() {
                 shapeCount++
             }
             if (shapeCount == 3) {
+                setTimeout(function () {
                     alert(shape + " wins!");
-                    resetGame();
-                return;
-
+                     resetGame(); 
+                }, 100);
+                    return;
             }
 
             if (shapeCount != 3 && cellCounter == 9) {
+                setTimeout(function () {
                     alert("Sorry, mah dudes. It's a draw.");
-                    resetGame();
-                    return
-                }
+                }, 100);
+                setTimeout(function () {
+                    resetGame(); 
+                }, 100)
+                return;
+                
             }
         }
-        return
+    return
     }
 
-// function checkWin() {
-//     cellCounter++
-//     for (i = 0; i < winCombos.length; i++) {
-//         let shapeCount = 0;
-//         for (a = 0; a < winCombos[i].length; a++) {
-//             if (winCombos[i][a].innerHTML == shape) {
-//                 shapeCount++
-//             };
-//             if (shapeCount == 3) {
-//                 alert(shape + ' wins!')
-//                 return;
-//             }
-//             if (cellCounter == 9 && shapeCount == 3) {
-//                 alert(shape + ' wins!')
-//                 return;
-//             }
-//             else if (shapeCount == !3 && cellCounter == 9) {
-//                 alert('its a tie!')
-//                 return;
-//             };
-//         };
-//     };
-// };
+};
 
 function resetGame() {
+    shape = 'X'
     cellCounter = 0
     for (i = 0; i < cells.length; i++) {
         cells[i].textContent = "";
