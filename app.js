@@ -47,47 +47,25 @@ function checkWin() {
                 shapeCount++
             }
             if (shapeCount == 3) {
-                    alert(shape + " wins!");
-                    resetGame();
+                alert(shape + " wins!");
+                resetGame();
                 return;
 
             }
 
             if (shapeCount != 3 && cellCounter == 9) {
-                    alert("Sorry, mah dudes. It's a draw.");
-                    resetGame();
-                    return
-                }
+                alert("Sorry, mah dudes. It's a draw.");
+                resetGame();
+                return
             }
         }
-        return
     }
+    return
+}
 
-// function checkWin() {
-//     cellCounter++
-//     for (i = 0; i < winCombos.length; i++) {
-//         let shapeCount = 0;
-//         for (a = 0; a < winCombos[i].length; a++) {
-//             if (winCombos[i][a].innerHTML == shape) {
-//                 shapeCount++
-//             };
-//             if (shapeCount == 3) {
-//                 alert(shape + ' wins!')
-//                 return;
-//             }
-//             if (cellCounter == 9 && shapeCount == 3) {
-//                 alert(shape + ' wins!')
-//                 return;
-//             }
-//             else if (shapeCount == !3 && cellCounter == 9) {
-//                 alert('its a tie!')
-//                 return;
-//             };
-//         };
-//     };
-// };
 
 function resetGame() {
+    shape = ''
     cellCounter = 0
     for (i = 0; i < cells.length; i++) {
         cells[i].textContent = "";
