@@ -1,6 +1,25 @@
+body {
+    font-family: 'Amatic SC';
+    font-size: x-large;
+    background-color: gold;
+}
+
 h1 {
     color: black;
+    padding: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 1px;
+    vertical-align: bottom;
+    height: 50px;
+}
+
+h2 {
+    color: black;
     text-align: center;
+    font-size: larger;
+    padding: 2px;
+    scroll-padding-top: 0px;
+    margin-top: 0px;
 }
 #board {
     padding-top: 3em;
@@ -19,6 +38,7 @@ div.row > div {
 
     margin: 0 auto;
     width: 302px;
+    font-size: xx-large;
 }
 .top {
     border-bottom: 1px solid black;
@@ -36,4 +56,13 @@ div.row > div {
 }
 .top, .middle, .center, .bottom:hover {
     cursor: pointer;
+}
+
+
+img {
+    display: inline-block;
+    margin-top: 300px;
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
 }

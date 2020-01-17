@@ -1,3 +1,4 @@
+// ------------------------------------Variables---------------------------------------//
 let allRows = document.querySelectorAll('.row');
 let cells = document.querySelectorAll('.cell');
 let winCombos = [
@@ -18,6 +19,9 @@ let rightBoxes = document.querySelectorAll('.right')
 let centerBox = document.querySelectorAll('.center')
 let shape = 'X'
 let boxes = [topBoxes, bottomBoxes, rightBoxes, leftBoxes, centerBox]
+let timeoutID;
+
+// -------------------------------------- Functions ----------------------------------//
 
 
 for (i = 0; i < cells.length; i++) {
@@ -37,7 +41,7 @@ function userClick(e) {
     }
 };
 
-let timeoutID;
+
 
 function checkWin() {
     cellCounter++
