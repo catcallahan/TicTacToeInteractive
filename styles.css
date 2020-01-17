@@ -2,6 +2,10 @@ body {
     font-family: 'Amatic SC';
     font-size: x-large;
     background-color: gold;
+    background-image: url('934449.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
 }
 
 h1 {
@@ -61,7 +65,7 @@ div.row > div {
 
 img {
     display: inline-block;
-    margin-top: 300px;
+    margin-bottom: 900px;
     margin-left: 50px;
     width: 100px;
     height: 100px;
