@@ -37,6 +37,7 @@ function userClick(e) {
     }
 };
 
+let timeoutID;
 
 function checkWin() {
     cellCounter++
@@ -46,17 +47,17 @@ function checkWin() {
             if (winCombos[i][a].innerHTML == shape) {
                 shapeCount++
             }
-            if (shapeCount == 3) {
-                alert(shape + " wins!");
-                resetGame();
-                return;
 
+            if (shapeCount == 3) {
+                winDelay();
+                delayReset();
+                return;
             }
 
             if (shapeCount != 3 && cellCounter == 9) {
-                alert("Sorry, mah dudes. It's a draw.");
-                resetGame();
-                return
+                drawDelay();
+                delayReset();
+                return;
             }
         }
     }
@@ -65,9 +66,21 @@ function checkWin() {
 
 
 function resetGame() {
-    shape = ''
     cellCounter = 0
     for (i = 0; i < cells.length; i++) {
         cells[i].textContent = "";
     }
+    shape = "X"
+}
+
+function winDelay() {
+    timeoutID = setTimeout(alert, 10, shape +" wins!");
+}
+
+function drawDelay () {
+    timeoutID = setTimeout(alert, 10, "Sorry, mah dudes. It's a draw.")
+}
+
+function delayReset() {
+    timeoutID = setTimeout(resetGame, 10);
 }
